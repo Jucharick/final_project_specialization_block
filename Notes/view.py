@@ -28,7 +28,7 @@ def show_notes(note_list: list):
         for i, note in enumerate(note_list, 1):
             # print(f'\t{i}. {note[0][0]:7} {note[0][1]:15} {note[1].strftime("%Y-%m-%d %H:%M:%S")}') # [0][0] - id, [0][1] - name, [0][2] - body, [1] - date
             # print(f'\t{i}. {note[0][0]:7} {note[0][1]:15} {note[1][0:19]}') # [0][0] - id, [0][1] - name, [0][2] - body, [1] - date
-            print(f'\t{i}. {note[0]:7} {note[1]:15} {note[3][0:19]}') # 0 - id, 1 - name, 2 - body, 3 - date
+            print(f'\t{i:5}. {note[0]:7} {note[1]:10} {note[3][0:19]}') # 0 - id, 1 - name, 2 - body, 3 - date
     print()
 
 def create_note():
@@ -36,6 +36,16 @@ def create_note():
     name = input('Тема: ')
     body = input('Заметка: ')
     return id, name, body
+
+def select_note(message: str):
+    note = input(message)
+    return note
+
+def view_note(note: list):
+    print()
+    print(f'\t{"ID":7} {"Тема":10} {"Дата":22} {"Заметка"}')
+    print(f'\t{note[0][0]:7} {note[0][1]:10} {note[0][3][0:19]:22} {note[0][2]}')
+    print()
 
 def end_prog():
     print()

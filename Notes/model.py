@@ -28,3 +28,18 @@ def add_new_note(new_note: list):
     global notes_book
     new_note.append(str(datetime.now()))
     notes_book.append(new_note)
+
+def get_note(find_note: str):
+    global notes_book
+    result = []
+    for i, note in enumerate(notes_book):
+        for field in note:
+            if find_note in field:
+                result.append((note, i)) 
+                break
+    if len(result) > 1: # если в список по поиску для удаления добавились больше 1 строки, то мы не можем удалить
+        return False
+    elif result == []:
+        return result
+    else:
+        return result[0]
