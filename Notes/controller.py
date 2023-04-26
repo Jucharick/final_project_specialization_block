@@ -31,7 +31,7 @@ def start():
                 if upd_select_note:
                     upd_student = view.change_note_input()
                     model.update_note(upd_select_note[1], list(upd_student))
-                    view.information(f'\nЗаметка {upd_select_note[0][0]} обновлена\n')
+                    view.information(f'\nРедактирование заметки {upd_select_note[0][0]} завершено\n')
                 elif upd_select_note == []:
                     view.empty_request()
                 else:

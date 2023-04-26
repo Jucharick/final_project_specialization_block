@@ -51,7 +51,7 @@ def change_note_input():
     print('Введите новые данные (если изменения не требуются нажмите Enter): ')
     id = input('Введите ID: ')
     name = input('Введите тему: ')
-    body = input('Введите новый текст заметки: ')
+    body = input('Введите новый текст заметки: ').replace(",", "")
     return id, name, body
 
 def delete_confirm(del_select_note: str):

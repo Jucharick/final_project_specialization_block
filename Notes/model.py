@@ -49,6 +49,7 @@ def update_note(index: int, new: list):
     for i in range(len(new)):
         if new[i] != '':
             notes_book[index][i] = new [i]
+            notes_book[index][3] = str(datetime.now())
         else:
             notes_book[index][i]
 
