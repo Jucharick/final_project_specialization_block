@@ -20,10 +20,9 @@ def menu():
             print('Введите корректное значение')
 
 def create_note():
-    id = input('ID: ')
     name = input('Тема: ')
     body = input('Заметка: ')
-    return id, name, body
+    return name, body
 
 def end_prog():
     print()

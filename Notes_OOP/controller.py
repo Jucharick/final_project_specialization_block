@@ -1,5 +1,6 @@
 import notes_view
 import model
+from Note import Note
 
 def start():
     value =''
@@ -7,23 +8,24 @@ def start():
         value = notes_view.menu()
         match value:
             case 1:
-                # Показать список заметок
+                # Show a list of notes
                 pass
             case 2:
-                # Создать новую заметку
-                print(notes_view.create_note())
-                # model.add_new_note(notes_view.create_note())
+                # Create a new note
+                new_note = model.add_new_note(notes_view.create_note()) # notes_view.create_note() => ('', '')
+                print(Note.get_descriptive_long(new_note))
+                print(Note.get_descriptive_short(new_note))
                 notes_view.information(f'\nНовая заметка добавлена\n')
             case 3:
-                # Показать заметку
+                # Show a note
                 pass
             case 4:
-                # Изменить
+                # Update a note
                 pass
             case 5:
-                # Удалить
+                # Delete a note
                 pass
             case 6:
-                # Выход из программы
+                # Exit
                 notes_view.end_prog()
                 break

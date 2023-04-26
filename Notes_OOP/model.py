@@ -1,8 +1,5 @@
-from datetime import datetime
 from Note import Note
 
-def add_new_note(id: str, name: str, body: str):
-    date_note = datetime.now
-    new_note = Note(id, name, date_note, body)
-    print(new_note)
-
+def add_new_note(new_note: list):
+    create_new_note = Note(Note.get_id_note(), new_note[0], new_note[1], Note.get_date())
+    return create_new_note
