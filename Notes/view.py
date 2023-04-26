@@ -34,7 +34,7 @@ def show_notes(note_list: list):
 def create_note():
     id = input('ID: ')
     name = input('Тема: ')
-    body = input('Заметка: ')
+    body = input('Заметка: ').replace(",", "")
     return id, name, body
 
 def select_note(message: str):
@@ -47,6 +47,23 @@ def view_note(note: list):
     print(f'\t{note[0][0]:7} {note[0][1]:10} {note[0][3][0:19]:22} {note[0][2]}')
     print()
 
+def change_note_input():
+    print('Введите новые данные (если изменения не требуются нажмите Enter): ')
+    id = input('Введите ID: ')
+    name = input('Введите тему: ')
+    body = input('Введите новый текст заметки: ')
+    return id, name, body
+
+def delete_confirm(del_select_note: str):
+    result = input(f'Вы действительно хотите удалить {del_select_note} (y/n)? ').lower()
+    if result == 'y':
+        return True
+    elif result == 'n':
+        print('Операция отменена')
+        return False
+    else:
+        print('Вы ввели некорректное значение')
+
 def end_prog():
     print()
     print('Работа в программе завершена')
@@ -54,3 +71,13 @@ def end_prog():
 
 def information(message):
     print(message)
+
+def empty_request():
+    print()
+    print('Искомая заметка не найдена')
+    print()
+
+def many_request():
+    print()
+    print('Найденных заметок больше 1. Введите более точные данные')
+    print()

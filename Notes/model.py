@@ -43,3 +43,15 @@ def get_note(find_note: str):
         return result
     else:
         return result[0]
+
+def update_note(index: int, new: list):
+    global notes_book
+    for i in range(len(new)):
+        if new[i] != '':
+            notes_book[index][i] = new [i]
+        else:
+            notes_book[index][i]
+
+def del_note(note: list):
+    global notes_book
+    notes_book.remove(note)
