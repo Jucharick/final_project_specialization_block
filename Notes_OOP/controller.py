@@ -1,14 +1,19 @@
+import notes_view
+import model
+
 def start():
     value =''
     while True:
-        # value = view.menu()
+        value = notes_view.menu()
         match value:
             case 1:
                 # Показать список заметок
                 pass
             case 2:
                 # Создать новую заметку
-                pass
+                print(notes_view.create_note())
+                # model.add_new_note(notes_view.create_note())
+                notes_view.information(f'\nНовая заметка добавлена\n')
             case 3:
                 # Показать заметку
                 pass
@@ -20,5 +25,5 @@ def start():
                 pass
             case 6:
                 # Выход из программы
-                
+                notes_view.end_prog()
                 break
