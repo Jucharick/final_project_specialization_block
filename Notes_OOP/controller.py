@@ -1,21 +1,23 @@
-import notes_view
-import model
 from Note import Note
+from View import View
+from Commands import Commands
+from BD import BD
 
 def start():
     value =''
     while True:
-        value = notes_view.menu()
+        value = View.menu()
+        BD.open_file()
         match value:
             case 1:
                 # Show a list of notes
-                pass
+                print(BD.open_file())
             case 2:
                 # Create a new note
-                new_note = model.add_new_note(notes_view.create_note()) # notes_view.create_note() => ('', '')
+                new_note = Commands.add_note(View.create_note())
                 print(Note.get_descriptive_long(new_note))
-                print(Note.get_descriptive_short(new_note))
-                notes_view.information(f'\nНовая заметка добавлена\n')
+                BD.save_file(Note.__getstate__(new_note))
+                View.information(f'\nНовая заметка добавлена\n')
             case 3:
                 # Show a note
                 pass
@@ -27,5 +29,5 @@ def start():
                 pass
             case 6:
                 # Exit
-                notes_view.end_prog()
+                View.end_prog()
                 break
