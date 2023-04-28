@@ -7,7 +7,6 @@ def start():
     value =''
     while True:
         value = View.menu()
-        BD.open_file()
         match value:
             case 1:
                 # Show a list of notes

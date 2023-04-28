@@ -1,6 +1,3 @@
-import pickle
-
-
 class BD():
     '''Работа с базой данных'''
 
@@ -16,25 +13,10 @@ class BD():
     #         BD.NOTES_BOOK.append(note.strip().split(','))
     #     return file
 
-    # def save_file():
-    #     create_str = []
-    #     for note in BD.NOTES_BOOK:
-    #         create_str.append(','.join(note)) 
-    #     with open(BD.PATH, 'w', encoding='utf-8') as data:
-    #         data.write('\n'.join(create_str))  
-    
     def save_file(state: dict):
         try:
-            with open(BD.PATH, "wb") as fp:
-                pickle.dump(state, fp)
-            fp.close()
-        except:
-            print("Ошибка при работе с файлом")
-
-    def open_file():
-        try:
-            with open(BD.PATH, "rb") as fp:
-                    file = pickle.load(fp)
-                    return file
+            with open(BD.PATH, 'a', encoding='utf-8') as data:
+                for value in state.values():
+                    data.write(str(value) + ',')  
         except:
             print("Ошибка при работе с файлом")
