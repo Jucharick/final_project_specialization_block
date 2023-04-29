@@ -29,11 +29,6 @@ public abstract class Toy implements Toyinterface{
         return rate;
     }
 
-    @Override 
-    public void step() {
-        System.out.println("Шаг");
-    }
-
     @Override
     public void getInfo() {
         System.out.printf("ID: %d  Name: %s  Color: %s Rate: %f  \n",
