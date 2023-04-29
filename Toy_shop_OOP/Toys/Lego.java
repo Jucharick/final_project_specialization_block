@@ -2,8 +2,8 @@ package Toy_shop_OOP.Toys;
 
 public class Lego extends Toy{
 
-    public Lego(int id, String name, String color, float rate) {
-        super(id, name, color, rate);
+    public Lego() {
+        super(getCountId(), "Lego", getRandomCalor(), 0.3);
     }
 
     @Override
