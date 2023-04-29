@@ -16,7 +16,7 @@ class BD():
     def save_file(state: dict):
         try:
             with open(BD.PATH, 'a', encoding='utf-8') as data:
-                for value in state.values():
-                    data.write(str(value) + ',')  
+                for key, value in state.items():
+                    data.write("id:" + str(key) + str(value) + ',') 
         except:
             print("Ошибка при работе с файлом")
