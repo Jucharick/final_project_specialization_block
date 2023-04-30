@@ -2,8 +2,8 @@ package Toy_shop_OOP.Toys;
 
 public class Robot extends Toy{
 
-    public Robot() {
-        super(getCountId(), "Robot", getRandomCalor(), 0.5);
+    public Robot(double rate) {
+        super(getCountId(), "Robot", getRandomCalor(), rate);
     }
     
     @Override

@@ -2,8 +2,8 @@ package Toy_shop_OOP.Toys;
 
 public class Doll extends Toy{
 
-    public Doll() {
-        super(getCountId(), "Doll", getRandomCalor(), 0.2);
+    public Doll(double rate) {
+        super(getCountId(), "Doll", getRandomCalor(), rate);
     }
     
     @Override

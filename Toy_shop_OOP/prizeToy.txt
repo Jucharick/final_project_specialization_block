@@ -1,0 +1,3 @@
+ID: 11  Name: Robot  Color: yellow Rate: 0,500000  
+ID: 5  Name: Doll  Color: pink Rate: 0,200000  
+ID: 8  Name: Robot  Color: grey Rate: 0,500000  

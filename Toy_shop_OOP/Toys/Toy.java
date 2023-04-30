@@ -33,9 +33,18 @@ public abstract class Toy implements Toyinterface{
         return rate;
     }
 
+    public void setRate(double rate) {
+        this.rate = rate;
+    }
+
     @Override
     public void getInfo() {
         System.out.printf("ID: %d  Name: %s  Color: %s Rate: %f  \n",
+                          this.id, this.name, this.color, this.rate);
+    }
+
+    public String getStr() {
+        return String.format("ID: %d  Name: %s  Color: %s Rate: %f  \n",
                           this.id, this.name, this.color, this.rate);
     }
 
