@@ -22,19 +22,14 @@ public class Program {
 
     public static Toy prizeToy = null;
     
-    public static void main(String[] args) {
+    public static void main(String[] args) {  
 
-        int counter = 0;
-        while (counter < 10) {
-            get();
-            counter+=1;
-        }
-            
+        get();
+
     }
 
     private static void userView(){
         Scanner reader = new Scanner(System.in);
-        System.out.print("Давайте сыграем! \n");
         System.out.print("Введите количество игрушек: \n");
         SIZE= reader.nextInt();
         
@@ -112,7 +107,7 @@ public class Program {
             shopToys.add(new Robot(rateRobot));
         }
 
-        System.out.println("Shop First");
+        System.out.println("Shop Toys");
         for (Toy T: shopToys) {
             T.getInfo();
         }
@@ -132,6 +127,7 @@ public class Program {
         prizeToy.getInfo();
     }
 
+    // запись в файл 
     private static void put() {
         String str;
         str = prizeToy.getStr();
@@ -160,7 +156,12 @@ public class Program {
     }
 
     private static void get() {
-        init();
-        System.exit(0);
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Cыграем (y/n)? \n");
+        String userAnswer = scanner.nextLine().toLowerCase();
+        if (userAnswer.equals("y") || userAnswer.equals("yes") || userAnswer.equals("Да")) {
+            init();
+        }
+        scanner.close();
     }
 }
