@@ -24,7 +24,11 @@ public class Program {
     
     public static void main(String[] args) {
 
-        get();
+        int counter = 0;
+        while (counter < 10) {
+            get();
+            counter+=1;
+        }
             
     }
 
@@ -157,5 +161,6 @@ public class Program {
 
     private static void get() {
         init();
+        System.exit(0);
     }
 }
